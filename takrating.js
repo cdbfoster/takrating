@@ -23,7 +23,6 @@ var fs=require("fs")
 var db=new sqlite3.Database(databasepath, sqlite3.OPEN_READONLY, main)
 
 function main(error){
-	//db.all("SELECT name FROM sqlite_master WHERE type='table';",tables)
 	db.all("SELECT * FROM games ORDER BY date ASC, id ASC;",datacb)
 	function datacb(error,data){
 		var players={}
@@ -72,7 +71,7 @@ function main(error){
 			ratingcount[a]=0
 		}
 		for(a=0;a<data.length;a++){
-			if(includeplayer(data[a].player_white) && includeplayer(data[a].player_black) && data[a].size>=5 && data[a].notation!="" && data[a].result!="0-0"){// && isbot(data[a].player_white)+isbot(data[a].player_black)!=3){
+			if(includeplayer(data[a].player_white) && includeplayer(data[a].player_black) && data[a].size>=5 && data[a].notation!="" && data[a].result!="0-0"){
 				if(data[a].date%86400000 < lasttime%86400000){
 					for(player in players){
 						players[player].participation=Math.min(players[player].participation*.995,20)
@@ -205,7 +204,7 @@ function main(error){
 			}
 		}
 		function includeplayer(name){
-			return name!=="Anon" && name!=="FriendlyBot" && name!=="cutak_bot" && name!=="antakonistbot" && !/^Guest[0-9]+$/.test(name) //&& isbot(name)!==1
+			return name!=="Anon" && name!=="FriendlyBot" && name!=="cutak_bot" && name!=="antakonistbot" && !/^Guest[0-9]+$/.test(name)
 		}
 		function isbot(name){
 		    return {"TakticianBot TakticianBotDev":1,"alphatak_bot alphabot":1,"cutak_bot":1,"takkybot":1,"ShlktBot":1,"AlphaTakBot_5x5":1,"BeginnerBot":1,"TakkerusBot":1}[name]
