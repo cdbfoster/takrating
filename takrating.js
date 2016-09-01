@@ -149,7 +149,7 @@ function main(error){
 				console.log("Bot: "+playerlist[a].name)
 			}
 			var listname=playerlist[a].name
-			if({"TakticianBot":1,"alphatak_bot":1,"alphabot":1,"cutak_bot":1,"TakticianBotDev":1,"takkybot":1,"ShlktBot":1,"AlphaTakBot_5x5":1,"BeginnerBot":1,"alphatak_bot alphabot":1,"TakticianBot TakticianBotDev":1}[playerlist[a].name]){
+			if(isbot(playerlist[a].name)){
 				listname="*"+listname+"*"
 			}
 			out+=(a+1)+"\\. | "+listname+" | "+(playerlist[a].displayrating===playerlist[a].rating?"":"\\*")+Math.floor(playerlist[a].displayrating)+" | "+sign(Math.floor(playerlist[a].displayrating)-Math.floor(playerlist[a].oldrating))+" | "+playerlist[a].games+"\r\n"
@@ -208,7 +208,7 @@ function main(error){
 			return name!=="Anon" && name!=="FriendlyBot" && name!=="cutak_bot" && name!=="antakonistbot" && !/^Guest[0-9]+$/.test(name) //&& isbot(name)!==1
 		}
 		function isbot(name){
-			return {"TakticianBot":1,"alphatak_bot":1,"alphabot":1,"cutak_bot":1,"TakticianBotDev":1,"takkybot":1,"ShlktBot":1,"AlphaTakBot_5x5":1,"BeginnerBot":1,"johnlewis":2}[name]
+		    return {"TakticianBot TakticianBotDev":1,"alphatak_bot alphabot":1,"cutak_bot":1,"takkybot":1,"ShlktBot":1,"AlphaTakBot_5x5":1,"BeginnerBot":1,"TakkerusBot":1}[name]
 		}
 		function printcurrentscore(pl,opponent){
 			console.log(players["!"+pl].rating+" "+opponent)
