@@ -64,6 +64,8 @@ function main(error){
 			,"Luffy":"Ally Luffy"
 			,"Archerion":"Archerion Archerion2"
 			,"Archerion2":"Archerion Archerion2"
+			,"Simmon":"Simmon Manet"
+			,"Manet":"Simmon Manet"
 		}
 		for(a=0;a<200;a++){
 			ratingsum[a]=0
