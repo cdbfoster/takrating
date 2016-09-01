@@ -1,5 +1,5 @@
 //The game id of the last game of the last update:
-var lastgameid=67250
+var lastgameid=76778
 
 //Rating calculation parameters:
 var initialrating=1000
