@@ -204,7 +204,7 @@ function main(error){
 			}
 		}
 		function includeplayer(name){
-			return name!=="Anon" && name!=="FriendlyBot" && name!=="cutak_bot" && name!=="antakonistbot" && !/^Guest[0-9]+$/.test(name)
+			return name!=="Anon" && name!=="FriendlyBot" && name!=="cutak_bot" && name!=="antakonistbot" && name!=="TreffnonX" && !/^Guest[0-9]+$/.test(name)
 		}
 		function isbot(name){
 		    return {"TakticianBot TakticianBotDev":1,"alphatak_bot alphabot":1,"cutak_bot":1,"takkybot":1,"ShlktBot":1,"AlphaTakBot_5x5":1,"BeginnerBot":1,"TakkerusBot":1}[name]
